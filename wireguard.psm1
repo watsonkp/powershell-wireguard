@@ -66,9 +66,7 @@ $vm = Add-AzVMNetworkInterface -VM $VMConfig -Id $NIC.Id
 # https://docs.microsoft.com/en-us/troubleshoot/azure/virtual-machines/ed25519-ssh-keys
 Write-Output "Setting SSH key..."
 # TODO: Read key from file. Surprisingly finicky...
-#$vm = Add-AzVMSshPublicKey -VM $VMConfig -KeyData $PublicKey -Path "/home/$User/.ssh/authorized_keys"
-$vm = Add-AzVMSshPublicKey -VM $VMConfig -KeyData "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDY3H3r3RVj9ZVvNnzh8llzaQFSzzIRDQsTI0ygqbTilE/bKiZwMIK74hNQ150WOCpmFUhBJhJ6BpYPPhKmmYbcGuLMCksgbmjR7RD7OkgCAEDdjz2qK6geMsEroxXKkSovsLOlSyFhnLiE4f8Ub2/LZ+AjN6ZYar+LwptbLt+E4priENAGPOSfcB7X7CJsdSA0uDbvytXUqt5YGvMvc61hJercUOrPzdGJd+0EegdZfySct+3lRL/p3kO2qF1Aw9mk/eKRjuqhvkt8RQb7MtgWJxj3w8IBIXPEO8p7b9HrBbO/6m7SYJ+JxKtdaAaJLgtkZ+esAjb+2H/RV56JV0qhUYtwyJv0H58Sc8AkYYbxCErweHMuQsl+D1ZniwHg+08w4rG+R5Ts8XIddbyuEIacCBbpxcEgsQCjlxTuRQeeZzzSmaliwPWfPfvAtWXVGmen0RHW+7ByxKOWqxhCw0qPsH4HiDbFcreO28tF17AuHJXuz+V1Uys5qbtuUv7a2lKLdwk4lH9OTaBczWJOKMkzS0kJvqV2VqG0KUjGdPyvE9VUXNb1Ba2mpn4o6WhizsC/5GYaoDkZIsMNouQOBc9LulsVgOQilHRO05RUyBzbDy5YD5J3z10QauEeqJ77J+/rSnsNhoR42ribzChrhpq94sJMKbitjRkY5zcfdcV9SQ==" -Path "/home/$User/.ssh/authorized_keys"
-$vm = Add-AzVMSshPublicKey -VM $VMConfig -KeyData "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDQsVpe7tnuluFGe3Y3XhD35dHd/wlp7DOtHKyDGltlvezj7sIo/M5s0TVmaRHT4rRxQywmrSNKOLQrD7oWwERDu84Drn5FEWsje92IPPEg5Rnl6QB5dHFPWykBjNVEjN6hrehnuam0TGRhLHUmrApvGHqU0YehWJdOkZqt6uZ6Cmbv+UNJFPpZ3UawSQP5ppAdX4NN6vsZ6z3/3Mc5vucU+y1FQA+U9cCouO1i17yn/avKS440WXdhZb2whkwBTNySFaKxIpKKo/wdAZ0X/CC9lcFIdJul2uV1ofeq7JDTk7+d0M7jA1OnTMrL6MRy/fpJ+5+b4HkOqtyxy2vD6lKZ" -Path "/home/$User/.ssh/authorized_keys"
+$vm = Add-AzVMSshPublicKey -VM $VMConfig -KeyData $PublicKey -Path "/home/$User/.ssh/authorized_keys"
 
 # Create the VM
 Write-Output "Creating VM..."
